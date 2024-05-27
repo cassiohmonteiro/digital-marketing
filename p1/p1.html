@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto 1</title>
+    <link rel="shortcut icon" href="../logosite/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="p1.css">
+</head>
+<body>
+    <header>
+        <div class="container2">
+            <div class="logo">
+                <a href="#"><img src="../logosite/favicon.ico" alt="logo marca"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../pagprincipal.html">Home</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="../login/login.html">Login</a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" placeholder="Buscar produtos...">
+                <button type="submit">Buscar</button>
+            </div>
+            <div class="cart">
+                <a href="../cartcompras/cart.html" id="cart-icon"><img src="../cartcompras/cart.logo/carrinho de compra.png" alt="Carrinho de Compras"></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="product-details">
+            <div class="product-image">
+                <img src="../produtos/Moto g54.avif" alt="Produto">
+            </div>
+            <div class="product-info">
+                <h1>Smartphone Motorola Moto G54</h1>
+                <p class="price">R$ 999,00</p>
+                <p class="description">Smartphone Motorola Moto G54 5G Grafite 128GB, 4GB RAM</p>
+                <div class="actions">
+                    <button>Comprar</button>
+                    <button onclick="adicionarAoCarrinho('MotoG54', 'Smartphone Motorola Moto G54', 999)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
+        <section class="similar-products">
+            <h2>Produtos Relacionados</h2>
+            <div class="product-card">
+                <img src="produto/p1200.webp" alt="Produto 1">
+                <p>Produto</p>
+                <p class="price">R$ 1.000</p>
+                <button>Ver Produto</button>
+            </div>
+            <div class="product-card">
+                <img src="produto/p1200.webp" alt="Produto 2">
+                <p>Produto</p>
+                <p class="price">R$ 3.000</p>
+                <button>Ver Produto</button>
+            </div>
+            <div class="product-card">
+                <img src="produto/p1200.webp" alt="Produto 3">
+                <p>Produto</p>
+                <p class="price">R$ 4.000</p>
+                <button>Ver Produto</button>
+            </div>
+        </section>
+    </main>
+    <footer id="contato">
+        <p>&copy; Loja de Celulares 2024. Possui todos os direitos autorais!</p>
+        <a href="https://www.instagram.com/cassioo__henrique/"><img src="../redessociais/instagram.png" alt="logo instagram"></a>
+        <a href="https://wa.me/89999478073"><img src="../redessociais/whatssap.png" alt="logo whatssap"></a>
+    </footer>
+
+    <script src="../cartcompras/cart.js"></script>
+</body>
+</html>
+

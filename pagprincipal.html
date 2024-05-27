@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Celulares</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="logosite/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    
+<header>
+     
+    <div class="container2">
+
+        <div class="logo">
+            <a href="#"><img src="logosite/favicon.ico" alt="logo marca"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li id="login"><a href="login/login.html">Login</a></li>
+            </ul>
+        </nav>
+
+        <div class="search">
+            <input type="text" placeholder="Buscar produtos...">
+            <button type="submit">Buscar</button>
+        </div>
+
+        <div class="cart">
+            <a href="cartcompras/cart.html" id="cart-icon"><img src="cartcompras/cart.logo/carrinho de compra.png" alt="Carrinho de Compras"></a>
+        </div>
+
+    </div>
+    
+</header>
+    <div class="container">
+
+        <div class="product">
+            <a href="p1/p1.html">
+                <img src="produtos/Moto g54.avif" alt="p2">
+                <h2>Smartphone Motorola Moto G54</h2>
+                <p class="description">Smartphone Motorola Moto G54 5G Grafite 128GB, 4GB RAM</p>
+                <p class="price">R$ 999,00</p>
+            </a>
+        </div>
+
+        <div class="product">
+            <a href="#">
+                <img src="produtos/iphone 13.avif" alt="p3">
+                <h2>iPhone 13 Apple 128GB</h2>
+                <p class="description">iPhone 13 Apple 128GB Cor Estelar</p>
+                <p class="price">R$ 3.599,00</p>
+            </a>
+        </div>
+
+        <div class="product">
+            <a href="#">
+                <img src="produtos/iphone14.avif" alt="p4">
+                <h2>Apple iPhone 14 Pro</h2>
+                <p class="description">Apple iPhone 14 Pro 1TB Dourado</p>
+                <p class="price">R$ 7.531,50</p>
+            </a>
+        </div>
+
+        <div class="product">
+            <a href="#">
+                <img src="produtos/motog84.avif" alt="p5">
+                <h2>Smartphone Motorola Moto G84 5G Azul</h2>
+                <p class="description"> Vegan Leather 256GB, 8GB RAM</p>
+                <p class="price">R$ 1.389,00</p>
+            </a>
+        </div>
+
+        <div class="product">
+            <a href="3">
+                <img src="produtos/redminote13.avif" alt="produto 6">
+                <h2>Smartphone Xiaomi Redmi 13C Azul</h2>
+                <p class="description">256GB, 8GB de RAM, Android 13 e Processador Octa-Core</p>
+                <p class="price">R$ 1.499,00</p>
+            </a>
+        </div>
+       
+    </div>
+    
+    <footer id="contato">
+            <p>&copy; Loja de Celulares 2024. Possui todos os direitos autorais!</p>
+            <a href="https://www.instagram.com/cassioo__henrique/"><img src="redessociais/instagram.png" alt="logo instagram"></a>
+            <a href="https://wa.me/89999478073"><img src="redessociais/whatssap.png" alt="logo whatssap"></a>
+    </footer>
+
+    <script>
+
+
+        function verificarLogin(logado) {
+            bla = document.getElementById("login")
+            if (logado) {
+                bla.innerHTML = "Logout";
+                bla.href = "";
+                return
+            } 
+                bla.innerHTML = "Login";
+                bla.href = "login/login.html";
+
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" href="../logosite/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+        <a href="file:///C:/Users/User/OneDrive/%C3%81rea%20de%20Trabalho/-/praticas/sitehtml.facul/pagprincipal.html#"><img src="../logosite/favicon.ico" alt="logo da loja"></a>
+    </header>
+    <h1>Inscreva-se ou entre</h1>
+    <div class="form">
+        <input type="text" id="nome" placeholder="Nome*">
+        <input type="email" id="email" placeholder="E-mail*">
+        <input type="password" id="senha" placeholder="Senha*">
+        <input type="password" id="confirmarSenha" placeholder="Confirmar Senha*">
+        <label for="newsletter">Quero receber novidades por e-mail:</label>
+        <input type="checkbox" id="newsletter" name="newsletter">
+        <p>Ao continuar, você concorda com a nossa <a href="#">Política de Privacidade</a> e os nossos <a href="#">Termos de Uso</a>.</p>
+        <button type="button" onclick="cadastrar()">Cadastrar</button>
+        <div id="alerta" class="alert">Por favor, preencha todos os campos.</div>
+    </div>
+
+    <script src="login.js">
+    </script>
+</body>
+</html>
