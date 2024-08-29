@@ -14,6 +14,19 @@ header {
     text-align: center;
 }
 
+.logo h1 {
+    color: #cc4514;
+    font-size: 1.6em;
+}
+
+.logo span {
+    color: white;
+}
+
+.logo a{
+    text-decoration: none;
+}
+
 h1 {
     text-align: center;
     margin-top: 30px;

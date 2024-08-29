@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smartphone Motorola Moto G54</title>
+    <title>iPhone 13 Apple 128GB</title>
     <link rel="shortcut icon" href="../redessociais/logosite/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="p1.css">
-    
+    <link rel="stylesheet" href="p2.css">
+
     <script>
         function adicionarAoCarrinho(id, nome, preco, imagem) {
             let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
@@ -24,7 +24,7 @@
             relatedProductsContainer.innerHTML = ''; // Limpa o container antes de adicionar produtos
 
             products.forEach(product => {
-                if (product.link !== 'p1/p1.html') { // Excluir o produto atual (id: 2)
+                if (product.link !== 'p2/p2.html') { // Excluir o produto atual (id: 2)
                     const productCard = document.createElement('div');
                     productCard.className = 'product-card';
                     productCard.innerHTML = `
@@ -46,11 +46,12 @@
 <body>
     <header>
         <div class="container2">
-            <div class="logo">
-                <a href="../pagprincipal.html">
-                    <h1>CH <span>IMPORTS</span></h1>
-                </a>
-            </div>
+            <div class="container2">
+                <div class="logo">
+                    <a href="../pagprincipal.html">
+                        <h1>CH <span>IMPORTS</span></h1>
+                    </a>
+                </div>
             <nav>
                 <ul>
                     <li><a href="../pagprincipal.html">Home</a></li>
@@ -70,15 +71,15 @@
     <main>
         <section class="product-details">
             <div class="product-image">
-                <img src="../produtos/Motog54.avif" alt="Produto">
+                <img src="../produtos/iphone13.png" alt="Produto">
             </div>
             <div class="product-info">
-                <h1>Smartphone Motorola Moto G54</h1>
-                <p class="description">Smartphone Motorola Moto G54 5G Grafite 128GB, 4GB RAM</p>
-                <p class="price">R$ 999,00</p>
+                <h1>iPhone 13 Apple 128GB</h1>
+                <p class="description">iPhone 13 Apple 128GB Cor Estelar</p>
+                <p class="price">R$ 3.599,00</p>
                 <div class="actions">
-                    <button onclick="comprarProduto('1', 'Smartphone Motorola Moto G54', 999,'../produtos/Motog54.avif')">Comprar</button>
-                    <button onclick="adicionarAoCarrinho('1', 'Smartphone Motorola Moto G54', 999,'../produtos/Motog54.avif')">Adicionar ao Carrinho</button>
+                    <button onclick="comprarProduto('2', 'iPhone 13 Apple 128GB', 3599, '../produtos/iphone13.png')">Comprar</button>
+                    <button onclick="adicionarAoCarrinho('2', 'iPhone 13 Apple 128GB', 3599, '../produtos/iphone13.png')">Adicionar ao Carrinho</button>
                 </div>
             </div>
         </section>
@@ -86,7 +87,6 @@
             <h2>Produtos Relacionados</h2>
             <div class="products-container"></div>
         </section>
-
     </main>
     <footer id="contato">
         <div class="footer-container">
@@ -102,8 +102,8 @@
             <div class="footer-section">
                 <h4>Siga-nos</h4>
                 <p>
-                    <a href="https://www.instagram.com/cassioo__henrique/" target="_blank" >Instagram</a>
-                    <a href="https://wa.me/89999478073" target="_blank" >whatssap</a>
+                    <a href="https://www.instagram.com/cassioo__henrique/"target="_blank" >Instagram</a>
+                    <a href="https://wa.me/89999478073"target="_blank" >whatssap</a>
                     
                 </p>
             </div>
@@ -112,43 +112,42 @@
             <p>&copy; 2024 Loja do Celular. Todos os direitos reservados.</p>
         </div>
     </footer>
-
-    <script src="../p2/products.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-                 const usuario = JSON.parse(sessionStorage.getItem('usuario'));
-                 const loggedIn = sessionStorage.getItem('loggedIn');
-                 const authText = document.getElementById('auth-text');
-     
-                 if (loggedIn === 'true' && usuario) {
-                     authText.innerText = `Olá, ${usuario.nome}`;
-                     authText.style.color = '#F25116'; 
-                     authText.style.fontWeight = 'bold'; 
-                     authText.style.cursor = 'default'; 
-                     authText.setAttribute('onclick', ''); 
-                     authText.style.textDecoration = 'none'; 
-                     authText.style.display = 'inline'; 
-                 } else {
-                     authText.innerText = 'Cadastrar'; 
-                 }
-     
-                   // Verificar o estado de login após o carregamento completo da página
-             window.onload = function() {
-                 const loggedIn = sessionStorage.getItem('loggedIn');
-                 const authText = document.getElementById('auth-text');
-     
-                 if (loggedIn !== 'true') {
-                     authText.innerText = 'Cadastrar'; // Voltar para "Cadastrar" se não estiver logado
-                 }
-             };
-     
-             function resetCadastro() {
-                 sessionStorage.removeItem('usuario'); // Limpar os dados do usuário
-                 sessionStorage.setItem('loggedIn', 'false'); // Definir a flag de login como falsa
-             }
-             });
-         </script>
 </body>
-</html>
+<script src="products.js"></script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+             const usuario = JSON.parse(sessionStorage.getItem('usuario'));
+             const loggedIn = sessionStorage.getItem('loggedIn');
+             const authText = document.getElementById('auth-text');
+ 
+             if (loggedIn === 'true' && usuario) {
+                 authText.innerText = `Olá, ${usuario.nome}`;
+                 authText.style.color = '#F25116'; 
+                 authText.style.fontWeight = 'bold'; 
+                 authText.style.cursor = 'default'; 
+                 authText.setAttribute('onclick', ''); 
+                 authText.style.textDecoration = 'none'; 
+                 authText.style.display = 'inline'; 
+             } else {
+                 authText.innerText = 'Cadastrar'; 
+             }
+ 
+               // Verificar o estado de login após o carregamento completo da página
+         window.onload = function() {
+             const loggedIn = sessionStorage.getItem('loggedIn');
+             const authText = document.getElementById('auth-text');
+ 
+             if (loggedIn !== 'true') {
+                 authText.innerText = 'Cadastrar'; // Voltar para "Cadastrar" se não estiver logado
+             }
+         };
+ 
+         function resetCadastro() {
+             sessionStorage.removeItem('usuario'); // Limpar os dados do usuário
+             sessionStorage.setItem('loggedIn', 'false'); // Definir a flag de login como falsa
+         }
+         });
+     </script>
+
+</html>

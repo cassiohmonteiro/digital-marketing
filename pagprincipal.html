@@ -1,112 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja de Celulares</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="shortcut icon" href="logosite/favicon.ico" type="image/x-icon">
-
+    <link rel="shortcut icon" href="redessociais/logosite/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    
-<header>
-     
-    <div class="container2">
-
-        <div class="logo">
-            <a href="#"><img src="logosite/favicon.ico" alt="logo marca"></a>
+    <header>
+        <div class="container2">
+            <div class="logo">
+                <a href="#">
+                    <h1>CH <span>IMPORTS</span></h1>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="login/register.html"><span id="auth-text">Cadastrar</span></a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <input type="text" placeholder="Buscar produtos...">
+                <button type="submit">Buscar</button>
+            </div>
+            <div class="cart">
+                <a href="cartcompras/cart.html" id="cart-icon"><img src="cartcompras/cart.logo/carrinho de compra.png" alt="Carrinho de Compras"></a>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li id="login"><a href="login/login.html">Login</a></li>
-            </ul>
-        </nav>
+    </header>
 
-        <div class="search">
-            <input type="text" placeholder="Buscar produtos...">
-            <button type="submit">Buscar</button>
-        </div>
-
-        <div class="cart">
-            <a href="cartcompras/cart.html" id="cart-icon"><img src="cartcompras/cart.logo/carrinho de compra.png" alt="Carrinho de Compras"></a>
-        </div>
-
+    <div class="tema">
+        <h1>Produtos Relacionados</h1>
     </div>
-    
-</header>
-    <div class="container">
 
-        <div class="product">
-            <a href="p1/p1.html">
-                <img src="produtos/Moto g54.avif" alt="p2">
-                <h2>Smartphone Motorola Moto G54</h2>
-                <p class="description">Smartphone Motorola Moto G54 5G Grafite 128GB, 4GB RAM</p>
-                <p class="price">R$ 999,00</p>
-            </a>
-        </div>
-
-        <div class="product">
-            <a href="#">
-                <img src="produtos/iphone 13.avif" alt="p3">
-                <h2>iPhone 13 Apple 128GB</h2>
-                <p class="description">iPhone 13 Apple 128GB Cor Estelar</p>
-                <p class="price">R$ 3.599,00</p>
-            </a>
-        </div>
-
-        <div class="product">
-            <a href="#">
-                <img src="produtos/iphone14.avif" alt="p4">
-                <h2>Apple iPhone 14 Pro</h2>
-                <p class="description">Apple iPhone 14 Pro 1TB Dourado</p>
-                <p class="price">R$ 7.531,50</p>
-            </a>
-        </div>
-
-        <div class="product">
-            <a href="#">
-                <img src="produtos/motog84.avif" alt="p5">
-                <h2>Smartphone Motorola Moto G84 5G Azul</h2>
-                <p class="description"> Vegan Leather 256GB, 8GB RAM</p>
-                <p class="price">R$ 1.389,00</p>
-            </a>
-        </div>
-
-        <div class="product">
-            <a href="3">
-                <img src="produtos/redminote13.avif" alt="produto 6">
-                <h2>Smartphone Xiaomi Redmi 13C Azul</h2>
-                <p class="description">256GB, 8GB de RAM, Android 13 e Processador Octa-Core</p>
-                <p class="price">R$ 1.499,00</p>
-            </a>
-        </div>
-       
-    </div>
+    <div class="container" id="product-container"></div>
+    <div id="boasVindas" class="boas-vindas" style="display:none;"></div>
     
     <footer id="contato">
-            <p>&copy; Loja de Celulares 2024. Possui todos os direitos autorais!</p>
-            <a href="https://www.instagram.com/cassioo__henrique/"><img src="redessociais/instagram.png" alt="logo instagram"></a>
-            <a href="https://wa.me/89999478073"><img src="redessociais/whatssap.png" alt="logo whatssap"></a>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Sobre Nós</h4>
+                <p>Somos uma loja especializada em vendas de celulares, oferecendo os melhores produtos e serviços para nossos clientes. Qualidade e satisfação garantidas.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <p>Email: cassiohmramos@gmail.com</p>
+                <p>Endereço: Rua do Faustino, 123, Teresina, PI</p>
+            </div>
+            <div class="footer-section">
+                <h4>Siga-nos</h4>
+                <p>
+                    <a href="https://www.instagram.com/cassioo__henrique/" target="_blank">Instagram</a>
+                    <a href="https://wa.me/89999478073" target="_blank">WhatsApp</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Loja do Celular. Todos os direitos reservados.</p>
+        </div>
     </footer>
-
+    
+    <script src="index.js"></script>
+    
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const usuario = JSON.parse(sessionStorage.getItem('usuario'));
+            const loggedIn = sessionStorage.getItem('loggedIn');
+            const authText = document.getElementById('auth-text');
 
+            if (loggedIn === 'true' && usuario) {
+                authText.innerText = `Olá, ${usuario.nome}`;
+                authText.style.color = '#F25116'; 
+                authText.style.fontWeight = 'bold'; 
+                authText.style.cursor = 'default'; 
+                authText.setAttribute('onclick', ''); 
+                authText.style.textDecoration = 'none'; 
+                authText.style.display = 'inline'; 
+            } else {
+                authText.innerText = 'Cadastrar'; 
+            }
 
-        function verificarLogin(logado) {
-            bla = document.getElementById("login")
-            if (logado) {
-                bla.innerHTML = "Logout";
-                bla.href = "";
-                return
-            } 
-                bla.innerHTML = "Login";
-                bla.href = "login/login.html";
+            // Verificar o estado de login após o carregamento completo da página
+            window.onload = function() {
+                const loggedIn = sessionStorage.getItem('loggedIn');
+                const authText = document.getElementById('auth-text');
 
-        }
+                if (loggedIn !== 'true') {
+                    authText.innerText = 'Cadastrar'; // Voltar para "Cadastrar" se não estiver logado
+                }
+            };
+
+            function resetCadastro() {
+                sessionStorage.removeItem('usuario'); // Limpar os dados do usuário
+                sessionStorage.setItem('loggedIn', 'false'); // Definir a flag de login como falsa
+            }
+        });
     </script>
-
 </body>
 </html>
+

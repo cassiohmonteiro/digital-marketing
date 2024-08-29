@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" href="../redessociais/logosite/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <header>
+            <div class="logo">
+                <a href="../pagprincipal.html">
+                    <h1>CH <span>IMPORTS</span></h1>
+                </a>
+            </div>
+    </header>
+    <h1>Inscreva-se ou entre</h1>
+    <div class="form">
+        <input type="text" id="nome" placeholder="Nome*">
+        <input type="email" id="email" placeholder="E-mail*">
+        <input type="password" id="senha" placeholder="Senha*">
+        <input type="password" id="confirmarSenha" placeholder="Confirmar Senha*">
+        <label for="newsletter">Quero receber novidades por e-mail:</label>
+        <input type="checkbox" id="newsletter" name="newsletter">
+        <p>Ao continuar, você concorda com a nossa <a href="#">Política de Privacidade</a> e os nossos <a href="#">Termos de Uso</a>.</p>
+        <button type="button" onclick="cadastrar()">Cadastra-se</button>
+        <div id="alerta" class="alert" style="display:none;">Por favor, preencha todos os campos.</div>
+    </div>
+
+</body>
+
+<script>
+    function cadastrar() {
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
+    const confirmarSenha = document.getElementById('confirmarSenha').value;
+    const alerta = document.getElementById('alerta');
+
+    if (nome && email && senha && confirmarSenha) {
+        if (senha === confirmarSenha) {
+            const usuario = { nome, email, senha };
+            sessionStorage.setItem('usuario', JSON.stringify(usuario)); // Armazenar usuário no localStorage
+            sessionStorage.setItem('loggedIn', 'true'); // Definir status de login como true
+            alert('Cadastro bem-sucedido!');
+            window.location.href = '../pagprincipal.html'; // Redirecionar para a página principal
+        } else {
+            alerta.innerText = 'As senhas não coincidem.';
+            alerta.style.display = 'block';
+        }
+    } else {
+        alerta.innerText = 'Por favor, preencha todos os campos.';
+        alerta.style.display = 'block';
+    }
+}
+    </script>
+</html>
